@@ -1,4 +1,4 @@
-export default function randomString(len, charSet) {
+export default function randomString(len: number, charSet?: string): string {
     charSet =
       charSet || "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     var randomString = "";
