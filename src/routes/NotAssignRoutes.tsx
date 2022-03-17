@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet, Navigate } from "react-router-dom";
-import { useAuth } from "../contexts/auth";
+import { useAuth } from "../hooks";
 
 const NotAssignRoutes = (): JSX.Element => {
   var { signed, loading } = useAuth();

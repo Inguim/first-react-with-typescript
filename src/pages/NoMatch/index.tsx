@@ -1,4 +1,3 @@
-import React from "react";
 import { Container } from "../../styles/Container";
 import bigestMouse from "../../assets/bigestMouse.png";
 import { Content } from "./styles";

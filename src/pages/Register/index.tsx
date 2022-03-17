@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { MessageError } from "../../styles/MessageError";
 import { FakeForm } from "../../styles/FakeForm";
 import { Input } from "../../styles/Input";
+import colors from "../../styles/colors";
 
 const Register = () => {
   const { Register, Login } = useAuth();
@@ -72,7 +73,7 @@ const Register = () => {
         />
         <MessageError>{messageError}</MessageError>
         <Button
-          backgroundColor="--green"
+          backgroundColor={colors.green}
           onClick={() => handleRegister({ name, password, email })}
         >
           Cadastrar

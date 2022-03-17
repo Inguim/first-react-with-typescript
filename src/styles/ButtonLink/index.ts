@@ -6,9 +6,9 @@ type Props = {
 
 export const ButtonLink = styled.a<Props>`
   text-decoration: none;
-  color: var(--blue-mustang);
+  color: ${({ theme }) => theme.color.white};
   padding: 10px;
-  background: var(${(props) => props.backgroundColor});
+  background: ${({ backgroundColor }) => backgroundColor};
   margin-bottom: 5px;
   margin: 5px 0;
   transition: all 0.15s ease-in;
@@ -21,8 +21,8 @@ export const ButtonLink = styled.a<Props>`
   }
 
   :hover {
-    color: var(--form-left);
-    background: var(--blue-mustang);
+    color: ${({ theme }) => theme.color.white_2};
+    background: ${({ theme }) => theme.color.blue_3};
     cursor: pointer;
   }
 `;

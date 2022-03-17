@@ -4,6 +4,7 @@ import { Container } from "../../styles/Container";
 import { Button } from "../../styles/Button";
 import { Content } from "./styles";
 import { ButtonLink } from "../../styles/ButtonLink";
+import colors from "../../styles/colors";
 
 const Welcome = (): JSX.Element => {
   const { Logout, user } = useAuth();
@@ -19,7 +20,7 @@ const Welcome = (): JSX.Element => {
         <ButtonLink type="button">
           <Link to="/dashboard">Dashboard</Link>
         </ButtonLink>
-        <Button backgroundColor="--red" onClick={() => handleLogout()}>
+        <Button backgroundColor={colors.red} onClick={() => handleLogout()}>
           Logout
         </Button>
       </Content>

@@ -8,9 +8,9 @@ export const Button = styled.button<Props>`
   border: 2px solid transparent;
   border-radius: 5px;
   width: 100%;
-  background: var(${(props) => props.backgroundColor});
+  background: ${({ backgroundColor }) => backgroundColor};
   padding: 10px;
-  color: var(--light-white);
+  color: ${({ theme }) => theme.color.white_1};
   text-transform: uppercase;
   font-weight: bold;
   margin: 5px 0;
@@ -18,8 +18,8 @@ export const Button = styled.button<Props>`
 
   :hover {
     cursor: pointer;
-    color: var(${(props) => props.backgroundColor});
-    border: 2px solid var(${(props) => props.backgroundColor});
+    color: ${({ backgroundColor }) => backgroundColor};
+    border: 2px solid ${({ backgroundColor }) => backgroundColor};
     background-color: transparent;
   }
 `;

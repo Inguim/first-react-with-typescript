@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FakeForm } from "../../styles/FakeForm";
 import { Input } from "../../styles/Input";
 import { ButtonLink } from "../../styles/ButtonLink";
+import colors from "../../styles/colors";
 
 
 const Login = (): JSX.Element => {
@@ -54,10 +55,10 @@ const Login = (): JSX.Element => {
           }
         />
         <MessageError>{messageError}</MessageError>
-        <Button backgroundColor="--green" onClick={() => handleLogin()}>
+        <Button backgroundColor={colors.green} onClick={() => handleLogin()}>
           Login
         </Button>
-        <ButtonLink backgroundColor="--light-blue">
+        <ButtonLink backgroundColor={colors.blue_2}>
           <Link to="/home/register">Registre-se</Link>
         </ButtonLink>
       </FakeForm>
