@@ -1,6 +1,5 @@
-import React from "react";
 import { Outlet, Navigate } from "react-router-dom";
-import { useAuth } from "../hooks";
+import { useAuth } from "../../hooks";
 
 const PrivateRoutes = (): JSX.Element => {
   var { signed, loading } = useAuth();
