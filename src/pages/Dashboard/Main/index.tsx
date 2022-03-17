@@ -1,10 +1,11 @@
 import { NavLink, Outlet } from "react-router-dom";
+import { Cards } from "../../../providers";
 import colors from "../../../styles/colors";
 import { Container, Items, Navbar, TextMessage } from "./styles";
 
 const activeLink = {
-  backgroundColor: colors.blue_2,
-  border: "transparent",
+  borderColor: colors.blue_2,
+  color: colors.blue_2,
 };
 
 export default function Dashboard(): JSX.Element {
@@ -15,7 +16,7 @@ export default function Dashboard(): JSX.Element {
           <li>
             <NavLink
               to="cards"
-              style={({isActive}) => isActive ? activeLink : {}}
+              style={({ isActive }) => (isActive ? activeLink : {})}
             >
               Welcome
             </NavLink>
@@ -23,15 +24,17 @@ export default function Dashboard(): JSX.Element {
           <li>
             <NavLink
               to="card/new"
-              style={({isActive}) => isActive ? activeLink : {}}
+              style={({ isActive }) => (isActive ? activeLink : {})}
             >
               Novo card
             </NavLink>
           </li>
         </Items>
       </Navbar>
-      {/* <TextMessage>Oi 😳, so temos isso aqui!</TextMessage> */}
-      <Outlet />
+      <TextMessage>Uga</TextMessage>
+      <Cards>
+        <Outlet />
+      </Cards>
     </Container>
   );
 }

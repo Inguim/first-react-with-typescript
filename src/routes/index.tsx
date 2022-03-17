@@ -6,7 +6,7 @@ import Register from "../pages/Register";
 
 import PrivateRoutes from "./PrivateRoutes";
 import NotAssignRoutes from "./NotAssignRoutes";
-import { Dashboard, NewCard } from "../pages/Dashboard";
+import { Cards, Dashboard, NewCard } from "../pages/Dashboard";
 
 const RoutesElements = (): JSX.Element => {
   return (
@@ -19,7 +19,7 @@ const RoutesElements = (): JSX.Element => {
         <Route path="/" element={<PrivateRoutes />}>
           <Route index element={<Welcome />} />
           <Route path="dashboard" element={<Dashboard />}>
-            <Route path="cards" element={<NewCard />} />
+            <Route path="cards" element={<Cards />} />
             <Route path="card/new" element={<NewCard />} />
           </Route>
         </Route>
