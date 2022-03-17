@@ -1,6 +1,5 @@
 import React, {
   createContext,
-  useContext,
   useEffect,
   useState,
 } from "react";
@@ -99,8 +98,3 @@ export const AuthProvider = ({ children }: Auth) => {
 
 export default AuthContext;
 
-export function useAuth() {
-  const context = useContext(AuthContext);
-
-  return context;
-}
