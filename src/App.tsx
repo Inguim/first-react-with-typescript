@@ -1,15 +1,14 @@
-import { AuthProvider } from "./contexts/auth";
-import { Theme } from "./providers";
+import { Auth, Theme } from "./providers";
 import RoutesElements from "./routes";
 import GlobalStyle from "./styles/global";
 
 function App() {
   return (
     <Theme>
-      <AuthProvider>
+      <Auth>
         <GlobalStyle />
         <RoutesElements />
-      </AuthProvider>
+      </Auth>
     </Theme>
   );
 }

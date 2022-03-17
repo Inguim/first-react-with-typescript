@@ -7,7 +7,7 @@ import { randomString } from "../utils";
 
 
 type Auth = {
-  children: React.ReactChild[];
+  children: React.ReactChild | React.ReactChild[];
 };
 
 type User = {
