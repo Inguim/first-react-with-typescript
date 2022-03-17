@@ -15,7 +15,7 @@ const Register = () => {
   const [name, setName] = useState<string>("");
   const history = useNavigate();
 
-  function handleRegister({
+  async function handleRegister({
     name,
     password,
     email,
@@ -25,15 +25,12 @@ const Register = () => {
     email: string;
   }) {
     if (email !== "" || password !== "" || name !== "") {
-      Register({
+      await Register({
         email: email,
         password: password,
         name: name,
       });
-      Login({
-        email: email,
-        password: password,
-      });
+      await Login(email, password);
 
       history("/");
     } else {

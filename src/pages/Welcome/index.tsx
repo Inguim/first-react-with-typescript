@@ -1,5 +1,4 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/auth";
 import { Container } from "../../styles/Container";
 import { Button } from "../../styles/Button";
@@ -8,7 +7,6 @@ import { ButtonLink } from "../../styles/ButtonLink";
 
 const Welcome = (): JSX.Element => {
   const { Logout, user } = useAuth();
-  const navigate = useNavigate();
 
   async function handleLogout() {
     Logout();
@@ -18,8 +16,12 @@ const Welcome = (): JSX.Element => {
     <Container>
       <Content>
         <h1>Welcome primo, {user?.name} 🐵</h1>
-        <ButtonLink onClick={() => navigate('/dashboard')}>Dashboard</ButtonLink>
-        <Button backgroundColor="--red" onClick={() => handleLogout()}>Logout</Button>
+        <ButtonLink type="button">
+          <Link to="/dashboard">Dashboard</Link>
+        </ButtonLink>
+        <Button backgroundColor="--red" onClick={() => handleLogout()}>
+          Logout
+        </Button>
       </Content>
     </Container>
   );

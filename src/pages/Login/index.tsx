@@ -3,9 +3,10 @@ import { useAuth } from "../../contexts/auth";
 import { Container } from "../../styles/Container";
 import { Button } from "../../styles/Button";
 import { MessageError } from "../../styles/MessageError";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FakeForm } from "../../styles/FakeForm";
 import { Input } from "../../styles/Input";
+import { ButtonLink } from "../../styles/ButtonLink";
 
 const Login = (): JSX.Element => {
   const { Login } = useAuth();
@@ -16,16 +17,13 @@ const Login = (): JSX.Element => {
 
   async function handleLogin() {
     if (email !== "" && password !== "") {
-      const response = await Login({
-        email: email,
-        password: password,
+      await Login(email, password).then((response) => {
+        if (response) {
+          setMessageError(response);
+        } else {
+          history("/");
+        }
       });
-
-      if(response) {
-        setMessageError(response);
-      } else {
-        history('/');
-      }
     } else {
       setMessageError("Você esta tentando logar com informações vazias 😨?");
     }
@@ -56,12 +54,9 @@ const Login = (): JSX.Element => {
         <Button backgroundColor="--green" onClick={() => handleLogin()}>
           Login
         </Button>
-        <Button
-          backgroundColor="--light-blue"
-          onClick={() => history("/home/register")}
-        >
-          Registre-se
-        </Button>
+        <ButtonLink backgroundColor="--light-blue">
+          <Link to="/home/register">Registre-se</Link>
+        </ButtonLink>
       </FakeForm>
     </Container>
   );

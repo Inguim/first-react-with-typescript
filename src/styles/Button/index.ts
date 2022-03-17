@@ -13,6 +13,8 @@ export const Button = styled.button<Props>`
   color: var(--light-white);
   text-transform: uppercase;
   font-weight: bold;
+  margin: 5px 0;
+  transition: all 0.15s ease-in;
 
   :hover {
     cursor: pointer;

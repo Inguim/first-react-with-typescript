@@ -26,8 +26,8 @@ type ProviderValues = {
   loading: boolean;
   user: User | null;
   setSigned: React.Dispatch<React.SetStateAction<boolean>>;
-  Login: (callback: {email: string, password: string}) => any;
-  Register: (callback: Account) => void;
+  Login: (email: string, password: string) => Promise<string | void>;
+  Register: (callback: Account) => Promise<void>;
   Logout: () => void;
 };
 
@@ -58,13 +58,7 @@ export const AuthProvider = ({ children }: Auth) => {
     setSigned(false);
   }
 
-  async function Login({
-    email,
-    password,
-  }: {
-    email: string;
-    password: string;
-  }) {
+  async function Login(email: string, password: string): Promise<string | void> {
     if (!account) {
       return "Acredito que você ainda não se cadastrou no sistema";
     }
@@ -86,7 +80,7 @@ export const AuthProvider = ({ children }: Auth) => {
     }
   }
 
-  async function Register({ email, password, name }: Account) {
+  async function Register({ email, password, name }: Account): Promise<void>{
     setAccount({
       email: email,
       password: password,
