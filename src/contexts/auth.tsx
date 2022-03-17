@@ -3,7 +3,8 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import randomString from "../utils/randomString";
+import { randomString } from "../utils";
+
 
 type Auth = {
   children: React.ReactChild[];
