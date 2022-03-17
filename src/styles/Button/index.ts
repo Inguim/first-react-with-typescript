@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 type Props = {
-  backgroundColor: string;
+  backgroundColor?: string;
 };
 
 export const Button = styled.button<Props>`

@@ -3,10 +3,10 @@ import Welcome from "../pages/Welcome";
 import NoMatch from "../pages/NoMatch";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import Dashboard from "../pages/Dashboard";
 
 import PrivateRoutes from "./PrivateRoutes";
 import NotAssignRoutes from "./NotAssignRoutes";
+import { Dashboard, NewCard } from "../pages/Dashboard";
 
 const RoutesElements = (): JSX.Element => {
   return (
@@ -18,7 +18,10 @@ const RoutesElements = (): JSX.Element => {
         </Route>
         <Route path="/" element={<PrivateRoutes />}>
           <Route index element={<Welcome />} />
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="dashboard" element={<Dashboard />}>
+            <Route path="cards" element={<NewCard />} />
+            <Route path="card/new" element={<NewCard />} />
+          </Route>
         </Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>

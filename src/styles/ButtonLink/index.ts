@@ -1,12 +1,9 @@
 import styled from "styled-components";
+import { Button } from "../Button";
 
-type Props = {
-  backgroundColor?: string;
-};
-
-export const ButtonLink = styled.a<Props>`
+export const ButtonLink = styled(Button)`
   text-decoration: none;
-  color: ${({ theme }) => theme.color.white};
+  color: ${({ theme }) => theme.color.black_1};
   padding: 10px;
   background: ${({ backgroundColor }) => backgroundColor};
   margin-bottom: 5px;
